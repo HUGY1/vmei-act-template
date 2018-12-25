@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="唯美美妆 - 全球美妆海外购，国际转运香港直发，最放心的美妆海外购平台，100%正品信赖">
+  <meta name="description" keywords="网上购物 团购 商城 购物 美妆 奢侈品 海淘 化妆品 晒单社区 精品推荐 特卖 化妆教程 美妆视频 极速免税 海外购 境外购 时尚女性 限时特卖 美容护肤 化妆视频 化妆品海淘 美妆海淘">
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-control" content="no-cache">
+  <meta http-equiv="Cache" content="no-cache">
+  <title>唯美活动页</title>
+  <link type="image/x-icon" href="https://assets.vmei.com/images/favicon.ico" rel="shortcut icon">
+  <script src="https://static.mlinks.cc/scripts/dist/mlink.min.js"></script>
+</head>
+
+<body class="z-loading">
+  <!--顶部跳转APP-->
+  <div class="recommendown" style="display: none" id='recommendown'>
+    <a class="openapp-live openapplink" id="linkOpenApp" href="javascript:void(0)">
+      <div class="logo">
+        <img src="https://assets.vmei.com/system/wechat/images/new-logo-radius.png" width="100%">
+        <div class="two-line">
+          <p>下载APP领108元新人红包</p>
+          <p>唯美美妆——开启你的美妆世界</p>
+        </div>
+      </div>
+      <div class="down">立即打开</div>
+    </a>
+  </div>
+
+  <section id="app" v-cloak>  
+
+    <div class="m-three">
+      <div class="u-item" @click='goToPage(594,"vmact")'></div>
+      <div class="u-item" @click='goToPage(595,"vmact")'></div>
+      <div class="u-item" @click='goToPage(596,"vmact")'></div>
+      <img src="../images/index/img_05.png" alt="">
+    </div>
+
+    <div class="m-three">
+      <div class="u-item" @click='goToPage(598,"vmact")'></div>
+      <div class="u-item" @click='goToPage(597,"vmact")'></div>
+      <div class="u-item" @click='goToPage(599,"vmact")'></div>
+      <img src="../images/index/img_06.png" alt="">
+    </div>
+    <img src="../images/index/img_07.png" alt="">
+
+    <div class="m-two">
+      <div class="u-item" @click='goToPage(600,"vmact")'></div>
+      <div class="u-item" @click='goToPage(601,"vmact")'></div>
+      <img src="../images/index/img_08.png" alt="">
+    </div>
+
+    <div class="m-two">
+      <div class="u-item" @click='goToPage(602,"vmact")'></div>
+      <div class="u-item" @click='goToPage(603,"vmact")'></div>
+      <img src="../images/index/img_09.png" alt="">
+    </div>
+
+    <!-- 导航 -->
+    <div class="m-tabs-index">
+      <div class="m-child" :class='{"active" : fixTab}'>
+        <a href="#2791" class="u-item"></a>
+        <a href="#2792" class="u-item"></a>
+        <a href="#2793" class="u-item"></a>
+        <a href="#2794" class="u-item"></a>
+        <a href="#2795" class="u-item"></a>
+        <img src="../images/index/tabs.png" alt="">
+      </div>
+    </div>
+
+    <div class="m-nav">
+      <div class="u-item" @click='handleNavs(1)'></div>
+      <div class="u-item" @click='handleNavs(2)'></div>
+      <div class="u-item" @click='handleNavs(3)'></div>
+      <div class="u-item" @click='handleNavs(4)'></div>
+      <img src="../images/index/nav.png" alt="">
+    </div>
+    <section class="m-prodList">
+      <div class="m-channel" v-for='(item,index) in prodList' :key='item.id' :id='item.id'>
+        <div class="u-title">
+          <span>{{item.name}}</span>
+        </div>
+
+        <ul class="m-list">
+          <li v-for='(prod,index) in item.productList' :key='prod.productId' @click='goToPage(prod.productId,"product")'>
+            <div class="u-img">
+              <img class="u-icon" src="../images/index/icon.png" alt="">
+              <img class="img" alt="" v-lazy="prod.pictureUrl + '?x-oss-process=image/resize,p_50'">
+            </div>
+            <div class="u-name">{{prod.promotionTempName || prod.name}}</div>
+            <div class="m-price"><span class="u-icon">￥<span class="u-price">{{prod.price | formatMoney}}</span></span>
+              <div class="u-btn">立即购买</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+    </section>
+
+    <transition name="fade">
+      <toast-box :content='toast' v-if='toast'></toast-box>
+    </transition>
+  </section>
+
+  <script>
+    var systemDomain = 'https://m.vmei.com'
+  </script>
+
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js" type="text/javascript"></script>
+  <script type=text/javascript src="https://assets.vmei.com/libs/vue@2.5/vue.min.js"></script>
+  <script type=text/javascript src="https://assets.vmei.com/libs/axios/axios.min.js"></script>
+  <script type=text/javascript src="https://assets.vmei.com/libs/vue-lazyload/vue-lazyload.js"></script>
+  <script>
+    let hasQuo = window.location.href.indexOf('?') > -1;
+    let ios = hasQuo ? "&ios" : "?ios";
+    -1 != window.location.search.indexOf("ios") ? document.querySelector(".recommendown").style.display =
+      "none" : ! function () {
+        var f, g, c = window.location.href,
+          d = c.lastIndexOf("/") + 1,
+          e = c.lastIndexOf("ios");
+        linkid = -1 != e ? "" + parseInt(c.substring(d, e - 1).match(/^\d+/g)) : "" + parseInt(c.substring(
+          d, c.length).match(/^\d+/g)),
+          f = document.querySelector("a.openapplink"),
+
+          g = [{
+            mlink: "http://a.mlinks.cc/AaXE",
+            button: f,
+            params: {
+              callType: "web",
+              actLinkStr: "",
+              weburl: c + ios
+            }
+          }], new Mlink(g)
+      }();
+  </script>
+  <script>
+    // 需要每次更换
+    var _mtac = { "performanceMonitor": 1 };
+    (function () {
+      var mta = document.createElement("script");
+      mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500662296");
+      mta.setAttribute("cid", "500662301");
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script>
+</body>
+
+</html>
