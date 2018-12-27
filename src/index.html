@@ -38,48 +38,15 @@
       <div class="u-item" @click='goToPage(594,"vmact")'></div>
       <div class="u-item" @click='goToPage(595,"vmact")'></div>
       <div class="u-item" @click='goToPage(596,"vmact")'></div>
-      <img src="../images/index/img_05.png" alt="">
-    </div>
-
-    <div class="m-three">
-      <div class="u-item" @click='goToPage(598,"vmact")'></div>
-      <div class="u-item" @click='goToPage(597,"vmact")'></div>
-      <div class="u-item" @click='goToPage(599,"vmact")'></div>
-      <img src="../images/index/img_06.png" alt="">
-    </div>
-    <img src="../images/index/img_07.png" alt="">
-
-    <div class="m-two">
-      <div class="u-item" @click='goToPage(600,"vmact")'></div>
-      <div class="u-item" @click='goToPage(601,"vmact")'></div>
-      <img src="../images/index/img_08.png" alt="">
     </div>
 
     <div class="m-two">
       <div class="u-item" @click='goToPage(602,"vmact")'></div>
       <div class="u-item" @click='goToPage(603,"vmact")'></div>
-      <img src="../images/index/img_09.png" alt="">
     </div>
 
     <!-- 导航 -->
-    <div class="m-tabs-index">
-      <div class="m-child" :class='{"active" : fixTab}'>
-        <a href="#2791" class="u-item"></a>
-        <a href="#2792" class="u-item"></a>
-        <a href="#2793" class="u-item"></a>
-        <a href="#2794" class="u-item"></a>
-        <a href="#2795" class="u-item"></a>
-        <img src="../images/index/tabs.png" alt="">
-      </div>
-    </div>
 
-    <div class="m-nav">
-      <div class="u-item" @click='handleNavs(1)'></div>
-      <div class="u-item" @click='handleNavs(2)'></div>
-      <div class="u-item" @click='handleNavs(3)'></div>
-      <div class="u-item" @click='handleNavs(4)'></div>
-      <img src="../images/index/nav.png" alt="">
-    </div>
     <section class="m-prodList">
       <div class="m-channel" v-for='(item,index) in prodList' :key='item.id' :id='item.id'>
         <div class="u-title">
@@ -89,7 +56,6 @@
         <ul class="m-list">
           <li v-for='(prod,index) in item.productList' :key='prod.productId' @click='goToPage(prod.productId,"product")'>
             <div class="u-img">
-              <img class="u-icon" src="../images/index/icon.png" alt="">
               <img class="img" alt="" v-lazy="prod.pictureUrl + '?x-oss-process=image/resize,p_50'">
             </div>
             <div class="u-name">{{prod.promotionTempName || prod.name}}</div>
@@ -99,8 +65,6 @@
           </li>
         </ul>
       </div>
-
-
     </section>
 
     <transition name="fade">
