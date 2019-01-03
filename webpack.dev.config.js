@@ -5,7 +5,9 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const config = {
   mode: 'development',
   entry: {
+    "mock": __dirname + '/src/js/mock.js',
     "index": __dirname + '/src/js/index.js'
+   
   },
   output: {
     filename: '[name].js',
@@ -86,7 +88,7 @@ const config = {
       filename: './index.html',
       title: 'Hot Module Replacement',
       template: './src/index.html',
-      chunks: ['index']
+      chunks: ['mock','index']
     }),
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin({

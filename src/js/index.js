@@ -1,6 +1,5 @@
 import '../css/reset.less'
 import '../css/index.less'
-
 axios.defaults.withCredentials = true;
 axios.defaults.crossDomain = true
 
@@ -90,7 +89,6 @@ var app = new Vue({
       })
     }
 
-
   },
   mounted() {
     let _this = this
@@ -98,6 +96,7 @@ var app = new Vue({
     //获取服务器时间
     axios.get(domain + `/serverTime`)
       .then(function (res) {
+        console.log(res)
         if (res.data.success) {
           let nowTime = res.data.data.serverTimes
           let startDate = 1546358400000 // 1.2凌晨
@@ -193,13 +192,12 @@ var app = new Vue({
       axios.get(url,{
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
       }).then(res => {
-        _this.showToast(res.data.msg)
         if (res.data.success) {
           _this.loadCoupon()
         }
       })
     },
-    // 加载优惠券
+    // 加载优惠券  无优惠券的活动屏蔽相关引用
     loadCoupon() {
       let url
       let _this = this
@@ -226,7 +224,7 @@ var app = new Vue({
           })
         })
         .catch(function (res) {
-          _this.showToast(res,20000)
+          
         })
     },
     getQueryString(e, t) {
