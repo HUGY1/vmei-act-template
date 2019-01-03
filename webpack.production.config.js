@@ -5,9 +5,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const config = {
   mode: 'production',
   entry: {
-    "index": __dirname + '/src/js/index.js',
-    "warmup": __dirname + '/src/js/warmup.js',
-    "entry": __dirname + '/src/js/entry.js'
+    "index": __dirname + '/src/js/index.js'
   },
   output: {
     filename: '[name].js',
@@ -68,30 +66,6 @@ const config = {
       filename: './index.html',
       title: 'Hot Module Replacement',
       template: './src/index.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      filename: './warmup.html',
-      title: 'Hot Module Replacement',
-      template: './src/warmup.html',
-      chunks: ['warmup']
-    }),
-    new HtmlWebpackPlugin({
-      filename: './entry.html',
-      title: 'Hot Module Replacement',
-      template: './src/entry.html',
-      chunks: ['entry']
-    }),
-    new HtmlWebpackPlugin({
-      filename: './christmas.html',
-      title: 'Hot Module Replacement',
-      template: './src/christmas.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      filename: './newYear.html',
-      title: 'Hot Module Replacement',
-      template: './src/newYear.html',
       chunks: ['index']
     }),
     new ExtractTextPlugin({

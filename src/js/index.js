@@ -72,7 +72,7 @@ var app = new Vue({
       wx.miniProgram.getEnv(function (res) {
         if (res.miniprogram) {
           _this.platform = 'miniApp';
-          domain = 'https://mp.vmei.com'
+          // domain = 'https://mp.vmei.com'   //一般用于红包或者优惠券
           wx.miniProgram.postMessage({
             data: {
               shareUrl: _this.shareInfo.url,
