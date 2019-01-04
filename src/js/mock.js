@@ -1,337 +1,55 @@
 const Mock = require('mockjs')
+
 Mock.mock(/\/serverTime/, {
-    'list|1-10': [{
-        'id|+1': 1,
-        'email': '@EMAIL'
-    }]
+    "success": true,
+    "msg": "操作成功",
+    "data": {
+        "serverTimes": Date.parse(new Date()),
+        "serverTime": "2019-01-04 15:10:05"
+    },
+    "apiCode": 0
 })
-
 Mock.mock(/\/vmeiActivity\//, {
-    "success":true,
-    "msg":"操作成功",
-    "data":{
-        "channelList":[
+    "success": true,
+    "msg": "操作成功",
+    "data": {
+        "channelList|2-4": [
             {
-                "id":2618,
-                "activityId":533,
-                "name":"热卖爆款",
-                "orderNum":5,
-                "accomplishId":0,
-                "status":0,
-                "productList":[
+                "id": 2618,
+                "activityId": 533,
+                "name": "热卖爆款",
+                "orderNum": 5,
+                "accomplishId": 0,
+                "status": 0,
+                "productList|4-6": [
                     {
-                        "marketPrice":"685.00",
-                        "price":"628.00",
-                        "pictureUrl":"https://img01.vmei.com/201701/C0C5F93BE54B4F698CA2164679BCE709.jpg",
-                        "customPictureUrl":null,
-                        "freeShipping":false,
-                        "name":"Estee Lauder/雅诗兰黛 多效智妍面霜50ml 黄金抗衰老 提拉紧致 抗皱保湿",
-                        "postCount":104,
-                        "activityName":[
+                        "marketPrice": "685.00",
+                        "price": "628.00",
+                        "pictureUrl": "https://img01.vmei.com/201701/C0C5F93BE54B4F698CA2164679BCE709.jpg",
+                        "customPictureUrl": null,
+                        "freeShipping": false,
+                        "name": "Estee Lauder/雅诗兰黛 多效智妍面霜50ml 黄金抗衰老 提拉紧致 抗皱保湿",
+                        "postCount": 104,
+                        "activityName": [
                             "限时打折"
                         ],
-                        "function":[
+                        "function": [
 
                         ],
-                        "storage":9999969,
-                        "productId":501968,
-                        "activityChannelProductId":0,
-                        "promotionTempName":"",
-                        "orderNum":0,
-                        "tagName":null,
-                        "brand":null,
-                        "defaultSku":null,
-                        "futurePrice":null,
-                        "useSpecialPrice":false
-                    },
-                    {
-                        "marketPrice":"1210.00",
-                        "price":"886.00",
-                        "pictureUrl":"https://img01.vmei.com/201811/7129F5CDA2134E2C85FD61E9F6F4B7B1.jpg",
-                        "customPictureUrl":null,
-                        "freeShipping":true,
-                        "name":"Estee Lauder/雅诗兰黛 红石榴鲜活亮采套装 日霜 晚霜",
-                        "postCount":24,
-                        "activityName":[
-                            "限时打折"
-                        ],
-                        "function":[
-
-                        ],
-                        "storage":99990,
-                        "productId":506405,
-                        "activityChannelProductId":0,
-                        "promotionTempName":"",
-                        "orderNum":0,
-                        "tagName":null,
-                        "brand":null,
-                        "defaultSku":null,
-                        "futurePrice":null,
-                        "useSpecialPrice":false
-                    },
-                    {
-                        "marketPrice":"531.00",
-                        "price":"388.00",
-                        "pictureUrl":"https://img01.vmei.com/201708/DD8597F3A84C4E35A10FDABA659E5A68.jpg",
-                        "customPictureUrl":null,
-                        "freeShipping":true,
-                        "name":"Estee Lauder/雅诗兰黛 ANR小棕瓶密集修护二合一眼部精华15ml 再生基因眼霜 保湿淡化细纹 去浮肿黑眼圈 DNA 特润",
-                        "postCount":125,
-                        "activityName":[
-                            "限时打折"
-                        ],
-                        "function":[
-
-                        ],
-                        "storage":422,
-                        "productId":603277,
-                        "activityChannelProductId":0,
-                        "promotionTempName":"",
-                        "orderNum":0,
-                        "tagName":null,
-                        "brand":null,
-                        "defaultSku":null,
-                        "futurePrice":null,
-                        "useSpecialPrice":false
-                    },
-                    {
-                        "marketPrice":"531.00",
-                        "price":"388.00",
-                        "pictureUrl":"https://img01.vmei.com/201708/DD8597F3A84C4E35A10FDABA659E5A68.jpg",
-                        "customPictureUrl":null,
-                        "freeShipping":true,
-                        "name":"Estee Lauder/雅诗兰黛 ANR小棕瓶密集修护二合一眼部精华15ml 再生基因眼霜 保湿淡化细纹 去浮肿黑眼圈 DNA 特润",
-                        "postCount":125,
-                        "activityName":[
-                            "限时打折"
-                        ],
-                        "function":[
-
-                        ],
-                        "storage":422,
-                        "productId":603277,
-                        "activityChannelProductId":0,
-                        "promotionTempName":"",
-                        "orderNum":0,
-                        "tagName":null,
-                        "brand":null,
-                        "defaultSku":null,
-                        "futurePrice":null,
-                        "useSpecialPrice":false
-                    },
-                    {
-                        "marketPrice":"510.00",
-                        "price":"398.00",
-                        "pictureUrl":"https://img01.vmei.com/201809/1E5E9435570E465F93D81CCEFF4CBE39.jpg",
-                        "customPictureUrl":null,
-                        "freeShipping":true,
-                        "name":"Estee Lauder/雅诗兰黛 新款特润超能量修护抗蓝光眼霜15ml 小棕瓶 去黑眼圈 挥别干纹 细纹",
-                        "postCount":119,
-                        "activityName":[
-                            "限时打折"
-                        ],
-                        "function":[
-
-                        ],
-                        "storage":639,
-                        "productId":610000,
-                        "activityChannelProductId":0,
-                        "promotionTempName":"",
-                        "orderNum":0,
-                        "tagName":null,
-                        "brand":null,
-                        "defaultSku":null,
-                        "futurePrice":null,
-                        "useSpecialPrice":false
-                    },
-                    {
-                        "marketPrice":"347.00",
-                        "price":"314.00",
-                        "pictureUrl":"https://img01.vmei.com/201710/F5B8AD07BEB14885BF0C523831451EFA.jpg",
-                        "customPictureUrl":null,
-                        "freeShipping":false,
-                        "name":"Estee Lauder/雅诗兰黛 持久完美粉底液30ml 色泽持久 遮瑕控油",
-                        "postCount":631,
-                        "activityName":[
-                            "限时打折"
-                        ],
-                        "function":[
-
-                        ],
-                        "storage":30012129,
-                        "productId":2610,
-                        "activityChannelProductId":0,
-                        "promotionTempName":"",
-                        "orderNum":0,
-                        "tagName":null,
-                        "brand":null,
-                        "defaultSku":null,
-                        "futurePrice":null,
-                        "useSpecialPrice":false
-                    }
-                ]
-            },
-            {
-                "id":2618,
-                "activityId":533,
-                "name":"热卖爆款",
-                "orderNum":5,
-                "accomplishId":0,
-                "status":0,
-                "productList":[
-                    {
-                        "marketPrice":"685.00",
-                        "price":"628.00",
-                        "pictureUrl":"https://img01.vmei.com/201701/C0C5F93BE54B4F698CA2164679BCE709.jpg",
-                        "customPictureUrl":null,
-                        "freeShipping":false,
-                        "name":"Estee Lauder/雅诗兰黛 多效智妍面霜50ml 黄金抗衰老 提拉紧致 抗皱保湿",
-                        "postCount":104,
-                        "activityName":[
-                            "限时打折"
-                        ],
-                        "function":[
-
-                        ],
-                        "storage":9999969,
-                        "productId":501968,
-                        "activityChannelProductId":0,
-                        "promotionTempName":"",
-                        "orderNum":0,
-                        "tagName":null,
-                        "brand":null,
-                        "defaultSku":null,
-                        "futurePrice":null,
-                        "useSpecialPrice":false
-                    },
-                    {
-                        "marketPrice":"1210.00",
-                        "price":"886.00",
-                        "pictureUrl":"https://img01.vmei.com/201811/7129F5CDA2134E2C85FD61E9F6F4B7B1.jpg",
-                        "customPictureUrl":null,
-                        "freeShipping":true,
-                        "name":"Estee Lauder/雅诗兰黛 红石榴鲜活亮采套装 日霜 晚霜",
-                        "postCount":24,
-                        "activityName":[
-                            "限时打折"
-                        ],
-                        "function":[
-
-                        ],
-                        "storage":99990,
-                        "productId":506405,
-                        "activityChannelProductId":0,
-                        "promotionTempName":"",
-                        "orderNum":0,
-                        "tagName":null,
-                        "brand":null,
-                        "defaultSku":null,
-                        "futurePrice":null,
-                        "useSpecialPrice":false
-                    },
-                    {
-                        "marketPrice":"531.00",
-                        "price":"388.00",
-                        "pictureUrl":"https://img01.vmei.com/201708/DD8597F3A84C4E35A10FDABA659E5A68.jpg",
-                        "customPictureUrl":null,
-                        "freeShipping":true,
-                        "name":"Estee Lauder/雅诗兰黛 ANR小棕瓶密集修护二合一眼部精华15ml 再生基因眼霜 保湿淡化细纹 去浮肿黑眼圈 DNA 特润",
-                        "postCount":125,
-                        "activityName":[
-                            "限时打折"
-                        ],
-                        "function":[
-
-                        ],
-                        "storage":422,
-                        "productId":603277,
-                        "activityChannelProductId":0,
-                        "promotionTempName":"",
-                        "orderNum":0,
-                        "tagName":null,
-                        "brand":null,
-                        "defaultSku":null,
-                        "futurePrice":null,
-                        "useSpecialPrice":false
-                    },
-                    {
-                        "marketPrice":"531.00",
-                        "price":"388.00",
-                        "pictureUrl":"https://img01.vmei.com/201708/DD8597F3A84C4E35A10FDABA659E5A68.jpg",
-                        "customPictureUrl":null,
-                        "freeShipping":true,
-                        "name":"Estee Lauder/雅诗兰黛 ANR小棕瓶密集修护二合一眼部精华15ml 再生基因眼霜 保湿淡化细纹 去浮肿黑眼圈 DNA 特润",
-                        "postCount":125,
-                        "activityName":[
-                            "限时打折"
-                        ],
-                        "function":[
-
-                        ],
-                        "storage":422,
-                        "productId":603277,
-                        "activityChannelProductId":0,
-                        "promotionTempName":"",
-                        "orderNum":0,
-                        "tagName":null,
-                        "brand":null,
-                        "defaultSku":null,
-                        "futurePrice":null,
-                        "useSpecialPrice":false
-                    },
-                    {
-                        "marketPrice":"510.00",
-                        "price":"398.00",
-                        "pictureUrl":"https://img01.vmei.com/201809/1E5E9435570E465F93D81CCEFF4CBE39.jpg",
-                        "customPictureUrl":null,
-                        "freeShipping":true,
-                        "name":"Estee Lauder/雅诗兰黛 新款特润超能量修护抗蓝光眼霜15ml 小棕瓶 去黑眼圈 挥别干纹 细纹",
-                        "postCount":119,
-                        "activityName":[
-                            "限时打折"
-                        ],
-                        "function":[
-
-                        ],
-                        "storage":639,
-                        "productId":610000,
-                        "activityChannelProductId":0,
-                        "promotionTempName":"",
-                        "orderNum":0,
-                        "tagName":null,
-                        "brand":null,
-                        "defaultSku":null,
-                        "futurePrice":null,
-                        "useSpecialPrice":false
-                    },
-                    {
-                        "marketPrice":"347.00",
-                        "price":"314.00",
-                        "pictureUrl":"https://img01.vmei.com/201710/F5B8AD07BEB14885BF0C523831451EFA.jpg",
-                        "customPictureUrl":null,
-                        "freeShipping":false,
-                        "name":"Estee Lauder/雅诗兰黛 持久完美粉底液30ml 色泽持久 遮瑕控油",
-                        "postCount":631,
-                        "activityName":[
-                            "限时打折"
-                        ],
-                        "function":[
-
-                        ],
-                        "storage":30012129,
-                        "productId":2610,
-                        "activityChannelProductId":0,
-                        "promotionTempName":"",
-                        "orderNum":0,
-                        "tagName":null,
-                        "brand":null,
-                        "defaultSku":null,
-                        "futurePrice":null,
-                        "useSpecialPrice":false
+                        "storage": 9999969,
+                        "productId": 501968,
+                        "activityChannelProductId": 0,
+                        "promotionTempName": "",
+                        "orderNum": 0,
+                        "tagName": null,
+                        "brand": null,
+                        "defaultSku": null,
+                        "futurePrice": null,
+                        "useSpecialPrice": false
                     }
                 ]
             },
         ]
     },
-    "apiCode":0
+    "apiCode": 0
 })
