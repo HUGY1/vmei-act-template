@@ -1,5 +1,8 @@
 
 // 处理各种跳转的方法。变动较少所以抽离
+// 判断了客户端环境，根据不同环境进行跳转app,web,小程序
+// @params linkid: 链接ID（美妆团ID，商品ID）
+// @params type: 链接类型。 vmact: 美妆团 product: 商品
 function goToPage(linkid, type) {
     var _this = this;
     var linkHref

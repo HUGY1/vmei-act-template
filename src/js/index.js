@@ -30,12 +30,12 @@ var app = new Vue({
     fixTab: false, //固定导航栏
     userShareKey: '', //分享人
     shareInfo: {
-      title: '双旦礼遇季 最高188任选6件起 活动时间：12.24-1.1',
-      content: '年度热销榜单、品牌大赏、口碑好物钜惠来袭，圣诞礼盒超值抢购，量贩囤货过新年，好货任选，好用不贵。',
-      url: "https://act.vmei.com/web/m/act/2018/christmas/dist/index.html?needSS=1",
-      urlWechat: "https://m.vmei.com/special/2018/christmas/dist/index",
-      imgUrl: "https://assets.vmei.com/web/m/act/2018/christmas/images/index/share1.jpg",
-      imgUrlWechat: "https://assets.vmei.com/web/m/act/2018/christmas/images/index/share2.jpg"
+      title: '分享活动标题',
+      content: '分享活动内容简介。',
+      url: "https://act.vmei.com/web/m/act/2018/christmas/dist/index.html?needSS=1", // act链接
+      urlWechat: "https://m.vmei.com/special/2018/christmas/dist/index", // 微信端连接 m.vmei.com开头
+      imgUrl: "https://assets.vmei.com/web/m/act/2018/christmas/images/index/share1.jpg", // 小程序分享图
+      imgUrlWechat: "https://assets.vmei.com/web/m/act/2018/christmas/images/index/share2.jpg" // 微信分享图
     },
     prodList: [],
     time: {
